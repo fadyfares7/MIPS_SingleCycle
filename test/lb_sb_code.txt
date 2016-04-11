@@ -1,0 +1,23 @@
+# this mini program write 2 values into registers (one that will be affected by the signed insruction and one that will not), store them in memory and then write them back into different registers 
+
+addi $s0, $zero, 1
+addi $s1, $zero, 160
+
+ori $s2, $zero, 8
+
+sb $s0, 0($s2)
+sb $s1, 4($s2)
+
+lb $t0, 0($s2)
+
+# loading signed 0xa0 in t1 == -96
+lb $t1, 4($s2)
+
+# Tracing:
+# $16 = 0x0001 == 1 
+# $17 = 0x00a0 == 160
+# $18 = 0x8   ==8
+# memory 0x8=1    
+# memory 0xc=160 == -96 == a0
+# $8 = 0x00000001 = 1
+# $9 = 0xffffffa0 = -96 (yup -96)

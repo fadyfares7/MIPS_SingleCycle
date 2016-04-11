@@ -1,0 +1,133 @@
+include "Adder.v";
+include "Mux.v"; 
+include "PC.v";
+include "Sign_extend.v";
+include "Shift_left_2.v";
+include "RegisterFile.v";
+include "instruction memory.v";
+include "data_memory.v";
+include "ALU.v";
+include "ALU_Control.v";
+include "Shift_left_16.v";
+
+
+
+module MIPS;
+
+	wire[31:0] MuxJr_PC , 
+		PC_out , 
+		PCplus4 , 
+		shiftL2Jmp_out , 
+		shiftL2Jmp_out2 ,
+		Inst ,
+		shiftL2Imm_AdderImm ,
+		AdderImm_MuxBranch, 
+		MuxBranch_MuxJmp,
+		MuxJmp_MuxJr , 
+		signExtendedImm,
+		read_data1_operand1, 
+		read_data2,
+		write_data,
+		operand2,
+		result,
+		data_out,
+		MuxMem1_2,
+		MuxMem2_3 ;
+
+	wire[4:0] MuxReg_MuxJal,
+	 	write_reg;
+
+	wire[2:0] AluOp;
+
+	wire[3:0] AlU_control_Op;
+
+	wire BranchOr_MuxBranch , 
+		Jump , 
+		Jr , 
+		branch ,
+		zero , 
+		branchNotEq ,
+		BeqAnd_BranchOr,
+		RegDst,
+		RegWrite,
+		ALUSrc,
+		ALUSrc2,
+		MemWrite,
+		MemRead,
+		MemToReg,
+		Jal,
+		unsigned_Op, 
+		LUI,
+		byte_mode,
+		half_word_mode ;
+	reg clk;
+
+
+	// Instruction Fitch
+
+	PC pc(clk , MuxJr_PC , PC_out); //clk is connected to clock of mips
+
+	instructionMem instMem(PC_out, Inst);
+
+	// Instruction Decode
+	Control_Unit control_unit(Inst[31:26],RegDst, RegWrite, ALUSrc, AluOp, MemWrite, MemRead, MemToReg, branch, Jump, branchNotEq, Jal, unsigned_Op, LUI, half_word_mode, byte_mode);
+	
+	Mux_5bit MuxReg(Inst[20:16], Inst[15:11], RegDst, MuxReg_MuxJal);
+	Mux_5bit MuxJal(MuxReg_MuxJal, 5'b11111, Jal, write_reg);    // 2'd31 is $ra address 
+
+	register_file reg_file(read_data1_operand1, read_data2, Inst[25:21], Inst[20:16], write_reg, write_data, RegWrite, clk);
+
+	Sign_extend sign_extend1(Inst[15:0] , signExtendedImm, unsigned_Op);
+
+	// Execution
+
+	Mux MuxAlu1(read_data2, signExtendedImm, ALUSrc, operand2);
+	
+	ALU alu(read_data1_operand1, operand2, AlU_control_Op, unsigned_Op, Inst[10:6], result, zero);
+	ALU_Control alu_control(AlU_control_Op, Jr, AluOp, Inst[5:0]);
+
+	// Memory 
+	
+	Data_memory data_memory(result , read_data2, MemRead, MemWrite, half_word_mode, byte_mode, unsigned_Op, data_out, clk);
+	
+	// Write Back Data
+	Mux MuxMem1(result, data_out, MemToReg, MuxMem1_2);
+	Mux MuxMem2(MuxMem1_2, {Inst[15:0],16'b0}, LUI, MuxMem2_3 );
+	Mux MuxMem3(MuxMem2_3, PCplus4, Jal, write_data); 
+
+
+	// new address calculations
+
+	Adder AdderPC(4 , PC_out , PCplus4);
+
+	Shift_left_2 shiftL2Jmp({6'b0,Inst[25:0]} , shiftL2Jmp_out); //input Inst[25:0] comes from inst mem
+	assign shiftL2Jmp_out2={PCplus4[31:28] , shiftL2Jmp_out[27:0]};
+
+	Adder AdderImm(PCplus4 , shiftL2Imm_AdderImm , AdderImm_MuxBranch);
+
+	Mux MuxBranch(PCplus4 , AdderImm_MuxBranch, BranchOr_MuxBranch, MuxBranch_MuxJmp);
+
+	Mux MuxJmp(MuxBranch_MuxJmp , shiftL2Jmp_out2 , Jump , MuxJmp_MuxJr); // control signal Jump is connected to control unit
+
+	Mux MuxJr(MuxJmp_MuxJr , read_data1_operand1, Jr , MuxJr_PC); // input rs_value comes from ALU input1
+                                                 // control signal Jr comes from control unit
+	and Beq_And(BeqAnd_BranchOr , branch , zero); // branch signal comes from control unit
+                                             // zero signal comes from ALU
+
+	and Bne_And(BneAnd_BranchOr , !zero , branchNotEq); // branchNotEq comes from control unit
+
+	or Branch_Or(BranchOr_MuxBranch , BeqAnd_BranchOr , BneAnd_BranchOr);
+
+	// edited "signExtend_shiftL2Imm" to "signExtendImm" and changed code order of sign extend 
+	Shift_left_2 shiftL2Imm(signExtendedImm, shiftL2Imm_AdderImm);
+
+	initial
+	clk = 1;
+	always
+	#4 clk = !clk;
+
+
+endmodule 
+
+
+

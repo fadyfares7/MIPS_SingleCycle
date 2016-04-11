@@ -1,0 +1,15 @@
+// The following code will load a 32-bit constant into a register 
+// and then store the value in the memory
+// the value that's needed to be loaded is 0xffcd2b31
+
+lui $s1, 65485 // ffcd in hexa equals 65485 in decimal
+ori $s1, $s1, 11057 // 2b31 equals 11057 in decimal
+addi $t0, $0, 20
+sw $s1, 0($t0)  // we are storing at address 20 
+
+Tracing:
+- The leftmost halfword of $s1 = 65485
+- the rightmost halfword of $s1 = 11057
+$t0 = 20
+Mem[20] = ffcd2b31
+

@@ -1,0 +1,6 @@
+addi $16,$0,0 //initialize $0 with 0
+lui $1,4097  //load 0x1001 in the most significant bits 
+ori $1,$1,32 //mask it with 0x20
+add $15,$0,$1 // put finally 0x0000ffff in $15
+sw $15,0($16) //store 0x0000ffff in Mem[address0] 
+lh $2,2($16) // load 0xffff signed and save it in $2 as 0xffffffff

@@ -1,0 +1,24 @@
+
+//TEST DESCRIPTION
+
+//calculate the factorial of (5)
+
+
+
+addi $s0,$0,0   
+addi $t1,$0,1
+addi $t2,$0,0
+addi $s1,$0,5
+factorial:
+mul $t1,$s1,$t1
+addi $s1,$s1,-1
+bne $s1,$0,factorial
+addi $t2,$t1,0
+Exit: add $0,$0,$0
+
+
+
+//OUTPUT
+
+//$t1=120
+//$t2=120

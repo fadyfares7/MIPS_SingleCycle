@@ -1,0 +1,371 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/fady/Desktop/ultra extreme new exclusive working (I hope) MIPS
+vAdder
+Z0 !s110 1419182234
+!i10b 1
+!s100 11OHEghShXoQX1RbYQj:33
+IHEAkmfTmJ6@QUUDYCB;eV1
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
+Z2 dC:/Users/fady/Desktop/MIPS
+Z3 w1419156871
+FAdder.v
+Z4 8C:/Users/fady/Desktop/MIPS/MIPS.v
+Z5 FC:/Users/fady/Desktop/MIPS/MIPS.v
+L0 1
+Z6 OP;L;10.3d;59
+r1
+!s85 0
+31
+Z7 !s108 1419182234.543000
+Z8 !s107 Shift_left_16.v|ALU_Control.v|ALU.v|data_memory.v|instruction memory.v|RegisterFile.v|Shift_left_2.v|Sign_extend.v|PC.v|Mux.v|Adder.v|C:/Users/fady/Desktop/MIPS/MIPS.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/fady/Desktop/MIPS/MIPS.v|
+!s101 -O0
+!i113 1
+Z10 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+n@adder
+vALU
+R0
+!i10b 1
+!s100 U@^78Y3b:`jJaU2La?0483
+IFz;;EFV8fXR;FAg:Zg=Qk0
+R1
+R2
+R3
+FALU.v
+R4
+R5
+L0 7
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+n@a@l@u
+vALU_Control
+R0
+!i10b 1
+!s100 GIEF4:Dl:17NYe=8aAI<Q2
+INd:`iB6KP;LR3`k@jU[RU3
+R1
+R2
+R3
+FALU_Control.v
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+n@a@l@u_@control
+vControl_Unit
+R0
+!i10b 1
+!s100 z7`kX3ObD;c2`RO<PfHDL1
+ILXU7E]1lH53C@HIXiPn`E3
+R1
+R2
+w1419087201
+8C:/Users/fady/Desktop/MIPS/Control_Unit.v
+FC:/Users/fady/Desktop/MIPS/Control_Unit.v
+L0 2
+R6
+r1
+!s85 0
+31
+!s108 1419182234.014000
+!s107 C:/Users/fady/Desktop/MIPS/Control_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/fady/Desktop/MIPS/Control_Unit.v|
+!s101 -O0
+!i113 1
+R10
+n@control_@unit
+vData_memory
+R0
+!i10b 1
+!s100 n20<Q8aOI7zTN4cQUTeMg3
+Im^j15a0Tlg2YmPXT<S2IQ1
+R1
+R2
+R3
+Z11 Fdata_memory.v
+R4
+R5
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+n@data_memory
+vdata_memory
+!s110 1419080675
+!i10b 1
+!s100 ]^26heP?:[Dn9]:Ih9T3C2
+IB7mb70cUcP_d>fOGMgXTE2
+R1
+R2
+w1419080672
+R11
+R4
+R5
+L0 5
+R6
+r1
+!s85 0
+31
+!s108 1419080675.868000
+Z12 !s107 Shift_left_16.v|ALU_Control.v|ALU.v|data_memory.v|instruction memory.v|RegisterFile.v|Shift_left_2.v|Sign_extend.v|PC (1).v|Mux.v|Adder (1).v|C:/Users/fady/Desktop/MIPS/MIPS.v|
+R9
+!s101 -O0
+!i113 1
+R10
+vinstructionMem
+R0
+!i10b 1
+!s100 cZ7U[`ZfbhUCFHVh`>f4<0
+IG7ZSMf1Z_jN@6[A5ROYm10
+R1
+R2
+R3
+Finstruction memory.v
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+ninstruction@mem
+vMIPS
+R0
+!i10b 1
+!s100 6>G>ZF`=Y:gmo4^De^8C60
+IT0=AnU]8^f=QfXO]0>fF^2
+R1
+R2
+R3
+R4
+R5
+L0 15
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+n@m@i@p@s
+vmips_advanced_data_memory
+!s110 1419080406
+!i10b 1
+!s100 ]WZ=bDEzGHiO>Q<h9I:T00
+IVFe@kV^LoIZERBbbY?EGL3
+R1
+R2
+w1419080356
+R11
+R4
+R5
+L0 5
+R6
+r1
+!s85 0
+31
+!s108 1419080406.626000
+R12
+R9
+!s101 -O0
+!i113 1
+R10
+vMux
+R0
+!i10b 1
+!s100 2iT`JBo=Td2oNdGO9V<Ag2
+I4laJM1j[ZoR434?n36WDh0
+R1
+R2
+Z13 w1418849835
+Z14 8C:/Users/fady/Desktop/MIPS/Mux.v
+Z15 FC:/Users/fady/Desktop/MIPS/Mux.v
+L0 3
+R6
+r1
+!s85 0
+31
+Z16 !s108 1419182234.766000
+Z17 !s107 C:/Users/fady/Desktop/MIPS/Mux.v|
+Z18 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/fady/Desktop/MIPS/Mux.v|
+!s101 -O0
+!i113 1
+R10
+n@mux
+vMux_5bit
+R0
+!i10b 1
+!s100 C6DIJl^<iJ>Y?Eealkzl^2
+IQPOWW^CTQMb@k7gVOXY[z2
+R1
+R2
+R13
+R14
+R15
+L0 24
+R6
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+!i113 1
+R10
+n@mux_5bit
+vPC
+R0
+!i10b 1
+!s100 n@f[hkY0PddU4cz6zV2<^1
+In6[b52>_h@WdEJZojVlV23
+R1
+R2
+R3
+FPC.v
+R4
+R5
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+n@p@c
+vregister_file
+R0
+!i10b 1
+!s100 ABQmSNhf>8ldcZlD8bbcU2
+Ie`0[KAj^kIV0NMGl14ko63
+R1
+R2
+R3
+FRegisterFile.v
+R4
+R5
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+vShift_left_16
+R0
+!i10b 1
+!s100 FFEEeMj^d7OSZAzIJbLLS0
+I<`RX=JaPDgoL7n?FC=jfo1
+R1
+R2
+R3
+FShift_left_16.v
+R4
+R5
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+n@shift_left_16
+vShift_left_2
+R0
+!i10b 1
+!s100 @BGDcNOERe:1A1I[U>9lR3
+IZhl_159OPfXKOZE=z?d]^0
+R1
+R2
+R3
+FShift_left_2.v
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+n@shift_left_2
+vSign_extend
+R0
+!i10b 1
+!s100 Im_cDiFFhLoOn9Z0QDnOW0
+IY7>@HA7]V?[A;o]I;9EQ51
+R1
+R2
+R3
+FSign_extend.v
+R4
+R5
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+n@sign_extend

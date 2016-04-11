@@ -1,0 +1,46 @@
+///////////////////////////////////// c code ///////////////////////////////////
+//	int fib(int n){
+//		if (n < 2)
+//			return n;
+//		return fib(n-1) + fib(n-2);
+//	}
+/////////////////////////////////// assembly //////////////////////////////////
+
+addi $a0,$0,8
+addi $sp,$sp,1000
+jal fib
+addi $v0,$v0,4
+j exit
+
+fib: 
+addi $sp,$sp,-4
+sw $ra,0($sp)
+addi $sp,$sp,-4
+sw $a0,0($sp)
+addi $sp,$sp,-4
+sw $t0,0($sp)
+slti $t0,$a0,2
+beq $t0,$zero,call
+addi $v0,$a0,0
+j done
+call:
+addi $a0,$a0,-1
+jal fib
+addi $t0,$v0,0
+addi $a0,$a0,-1
+jal fib
+add $v0,$t0,$v0
+
+done:
+lw $t0,0($sp)
+addi $sp,$sp,4
+lw $a0,0($sp)
+addi $sp,$sp,4
+lw $ra,0($sp)
+addi $sp,$sp,4
+jr $ra
+
+exit: 
+add $0,$0,$0
+////////////////////////////////// end ///////////////////////////////////////
+//$v0 will have the value of 25 at the end of the program

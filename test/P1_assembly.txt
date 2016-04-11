@@ -1,0 +1,44 @@
+///////////////////////////////////////// C Code //////////////////////////////////////
+//	g=6;
+//	h=4;
+//	i=2;
+//	j=3;
+//	int f= 10 + proc (g,h,i,j);
+
+
+//	int proc (int g, int h, int i , int j){
+//	int f;
+//	f=(g+h)-(i+j);
+//	return f;
+//	}
+//////////////////////////////////////// Assembly /////////////////////////////////////
+addi $s0,$0,3		
+addi $sp,$0,150
+addi $a0,$0,6		// g = 6
+addi $a1,$0,4		// h = 4
+addi $a2,$0,2		// i = 2
+addi $a3,$0,3		// j = 3
+jal proc
+addi $v0,$v0,10		// add 10 to $v0 to be 15
+j exit
+
+proc: 
+addi $sp,$sp,-4		// push
+sw $s0,0($sp)
+add $t0,$a0,$a1		// g + h
+add $t1,$a2,$a3		// i + j
+sub $s0,$t0,$t1		// (g+h) - (i+j)
+add $v0,$s0,$zero	// f = (g+h) - (i+j)
+lw $s0,0($sp)		// pull
+addi $sp,$sp,4
+jr $ra			// jump back
+
+exit: add $0,$0,$0
+//////////////////////////////////End of the program ///////////////////////////////////
+
+// The register $v0 will have 15 if the program runs correctly 
+
+
+
+
+

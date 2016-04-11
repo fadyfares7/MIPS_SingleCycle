@@ -1,0 +1,43 @@
+//switch (k) {
+// case 0: f = i + j; break;
+// case 1: f = g + h; break;
+// case 2: f = g - h; break; 
+//}
+
+
+   addi $s1,$0,5
+   addi $s2,$0,2
+   addi $s3,$0,3
+   addi $s4,$0,4
+   addi $s5,$0,1          //k=1
+   addi $t2,$0,3
+
+   addi $t6,$0,1
+   addi $t7,$0,2
+
+   slt $t3, $s5, $zero 
+   bne $t3, $0, Exit 
+   slt $t3, $s5, $t2 
+   beq $t3, $0, Exit
+   beq $s5, $0, L0
+   beq $s5, $t6,L1
+   beq $s5, $t7,L2
+
+L0:add $s0, $s3, $s4 
+   j Exit 
+L1:add $s0, $s1, $s2 
+   j Exit 
+L2:sub $s0, $s1, $s2 
+   j Exit 
+Exit:addi $0,$0,0
+
+//$t2=3
+//$t3=1
+//$t6=1
+//$t7=2
+//$s0=7
+//$s1=5
+//$s2=2
+//$s3=3
+//$s4=4
+//$s5=1

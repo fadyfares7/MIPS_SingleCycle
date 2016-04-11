@@ -1,0 +1,22 @@
+// This program computes the output of a certain logic circuit
+// A=>t1 , B=>t2 , C=>t3 , D=>t4
+
+addi  $t1,$0,1023
+addi  $t2,$0,256
+addi  $t3,$0,1023
+addi  $t4,$0,1023
+
+andi  $t5,$t1,42  
+ori   $t6,$t2,8   
+or    $t5,$t5,$t6 
+and   $t7,$t3,$t4 
+nor   $s0,$t5,$t7 
+
+
+//$t1=1023
+//$t2=256
+//$t3=1023
+//$t4=1023
+//$t5=298
+//$t6=264
+//$t7=11111111111111111111110000000000

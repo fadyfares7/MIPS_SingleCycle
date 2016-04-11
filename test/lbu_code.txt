@@ -1,0 +1,23 @@
+addi $s0, $zero, 1
+addi $s1, $zero, 160
+
+ori $s2, $zero, 0
+
+sb $s0, 0($s2)
+sb $s1, 4($s2)
+
+lbu $t0, 0($s2)
+
+// # loading unsigned  0xa0 in t2 == 160
+lbu $t1, 4($s2)
+
+// # Tracing:
+//# $16 = 0x0001
+//# $17 = 0x00a0
+//# $18 = 0x0000
+
+//# memory 0x0=1
+//# memory 0x4=160
+//# $8 = 0x00000001 = 1
+//# $9 = 0x000000a0 = 160
+

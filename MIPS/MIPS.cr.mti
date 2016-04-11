@@ -1,0 +1,107 @@
+{C:/Users/fady/Desktop/MIPS/instruction memory.v} {1 {vlog -work work -stats=none {C:/Users/fady/Desktop/MIPS/instruction memory.v}
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module instructionMem
+
+Top level modules:
+	instructionMem
+
+} {} {}} C:/Users/fady/Desktop/MIPS/RegisterFile.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/RegisterFile.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module register_file
+
+Top level modules:
+	register_file
+
+} {} {}} C:/Users/fady/Desktop/MIPS/Shift_left_16.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/Shift_left_16.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Shift_left_16
+
+Top level modules:
+	Shift_left_16
+
+} {} {}} C:/Users/fady/Desktop/MIPS/Adder.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/Adder.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} C:/Users/fady/Desktop/MIPS/sign_extend.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/sign_extend.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Sign_extend
+
+Top level modules:
+	Sign_extend
+
+} {} {}} C:/Users/fady/Desktop/MIPS/MIPS.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/MIPS.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Adder
+-- Compiling module Mux
+-- Compiling module Mux_5bit
+-- Compiling module PC
+-- Compiling module Sign_extend
+-- Compiling module Shift_left_2
+-- Compiling module register_file
+-- Compiling module instructionMem
+-- Compiling module Data_memory
+-- Compiling module ALU
+-- Compiling module ALU_Control
+-- Compiling module Shift_left_16
+-- Compiling module MIPS
+
+Top level modules:
+	Shift_left_16
+	MIPS
+
+} {} {}} C:/Users/fady/Desktop/MIPS/Shift_left_2.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/Shift_left_2.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Shift_left_2
+
+Top level modules:
+	Shift_left_2
+
+} {} {}} C:/Users/fady/Desktop/MIPS/ALU_Control.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/ALU_Control.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module ALU_Control
+
+Top level modules:
+	ALU_Control
+
+} {} {}} C:/Users/fady/Desktop/MIPS/PC.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/PC.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} C:/Users/fady/Desktop/MIPS/Control_Unit.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/Control_Unit.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Control_Unit
+
+Top level modules:
+	Control_Unit
+
+} {} {}} C:/Users/fady/Desktop/MIPS/ALU.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/ALU.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/fady/Desktop/MIPS/Mux.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/Mux.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Mux
+-- Compiling module Mux_5bit
+
+Top level modules:
+	Mux
+	Mux_5bit
+
+} {} {}} C:/Users/fady/Desktop/MIPS/data_memory.v {1 {vlog -work work -stats=none C:/Users/fady/Desktop/MIPS/data_memory.v
+Model Technology ModelSim PE Student Edition vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module Data_memory
+
+Top level modules:
+	Data_memory
+
+} {} {}}

@@ -1,0 +1,56 @@
+//TEST DESCRIPTION
+//////////////////////////////////////////////////
+//1-this programme compare three no. s2,s3,s4
+//2-then put the largest in s7
+//3-then compare this largest no. with 100 
+//4-and put the largest one in s0
+/////////////////////////////////////////////////
+
+addi $s0,$0,0 
+addi $s1,$0,0 
+addi $s6,$0,0 
+addi $s7,$0,0 
+addi $t0,$0,0 
+addi $s5,$0,1
+addi $s2,$0,20
+addi $s3,$0,50
+addi $s4,$0,200
+
+slt $s1,$s2,$s3    //compare s2,s3
+bne $s5 ,$s1,L1   //check if s5=s1 or not
+addi $s7,$s3,0     
+slt $s6,$s7,$s4   //compare s7,s4
+bne $s5 ,$s6,L2  //check if s5=s6 or not
+addi $s7,$s4,0   
+j compare
+
+L1:addi $s7,$s2,0
+slt $s6,$s7,$s4
+bne $s5 ,$s6,L2
+addi $s7,$s4,0   
+j compare
+
+L2:j compare
+
+compare: slti $s0,$s7,100  //compare s7,100
+beq $s0,$s5,L3     //check if s5=s0 or not
+addi $t0,$s7,0
+j Exit
+
+L3: addi $t0,$0,100
+
+Exit: add $0,$0,$0
+
+
+
+//OUTPUTS
+///////////
+//$t0=200
+//$s1=1
+//$s2=20
+//$s3=50
+//$s4=200
+//$s5=1
+//$s6=1
+//$s7=200
+////////////

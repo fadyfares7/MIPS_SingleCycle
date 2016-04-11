@@ -1,0 +1,53 @@
+////////////////////////////////////////C Code ///////////////////////////////////
+//	int sum (int A,int n)
+//	{ // where A is an array
+//	int i,s;
+//	s=0;
+//	for (int i=0;i<n;i++)
+//	s+=A[i];
+//	return s;
+//	}
+//////////////////////////////////// assembly //////////////////////////////////
+
+addi $s0,$0,2
+addi $s1,$0,3
+addi $s2,$0,4
+addi $s3,$0,5
+addi $s4,$0,6
+addi $s5,$0,7
+addi $s6,$0,100
+
+sw $s0,0($s6)
+sw $s1,4($s6)
+sw $s2,8($s6)
+sw $s3,12($s6)
+sw $s4,16($s6)
+sw $s5,20($s6)
+
+add $a0,$zero,$s6
+addi $a1,$zero,6
+jal sum
+j end
+
+sum:
+addi $v0,$zero,0
+addi $t2,$zero ,0
+addi $t0,$a0,0
+
+for: 
+slt $at,$t2,$a1
+beq $at,$zero,exit
+lw  $t1,0($t0)
+add $v0,$v0,$t1
+addi $t2,$t2,1
+addi $t0,$t0,4
+j for
+
+exit:
+jr $ra
+
+end:
+addi $s7,$0,0
+
+/////////////////////////////// Final state /////////////////////////////////
+// $v0 will have value of 27 at the end of the program

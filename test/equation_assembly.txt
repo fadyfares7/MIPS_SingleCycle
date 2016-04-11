@@ -1,0 +1,20 @@
+//this program calculates the value of this equation ((A-BC)/4)+D
+//A=>t0  B=>t1  c=>t2  D=>t3
+
+addi $t0,$0,10
+addi $t1,$0,2
+addi $t2,$0,3
+addi $t3,$0,5
+
+mul  $t4,$t1,$t2 
+sub  $t5,$t0,$t4 
+srl  $t5,$t5,2   
+add  $t6,$t5,$t3 
+
+//$t0=10
+//$t1=2
+//$t2=3
+//$t3=5
+//$t4=6
+//$t5=1
+//$t6=6
